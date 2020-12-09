@@ -1,6 +1,8 @@
 package com.vr1sh.calculator;
 
-public class ScientificActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ScientificActivity extends AppCompatActivity {
 
 
 
