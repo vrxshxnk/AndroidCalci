@@ -16,7 +16,7 @@ import org.mozilla.javascript.ast.Scope;
 public class MainActivity extends AppCompatActivity {
 
     Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bPercent, bPlus, bMinus,
-            bMultiply, bDivision, bEqual, bClear, bDot, bBracket;
+            bMultiply, bDivision, bEqual, bClear, bDot, bBracket, bBack;
     TextView tvInput,tvOutput;
     String process;
     boolean checkBracket = false;
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         bDot = findViewById(R.id.btnDot);
         bPercent = findViewById(R.id.btnPercent);
         bBracket = findViewById(R.id.btnBracket);
+        bBack = findViewById(R.id.btnBack);
 
         tvInput = findViewById(R.id.tvInput);
         tvOutput = findViewById(R.id.tvOutput);
