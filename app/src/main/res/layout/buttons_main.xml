@@ -23,17 +23,19 @@
             android:layout_column="0"/>
 
         <Button
-            android:id="@+id/btnBracket"
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:text="()"
+            android:text="←"
             android:fontFamily="@font/g_light"
+            android:layout_columnSpan="1"
             android:textSize="25sp"
             android:layout_row="0"
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:background="@color/ops"
             android:textColor="@color/white"/>
+
 
         <Button
             android:id="@+id/btnPercent"
@@ -237,10 +239,23 @@
             android:layout_height="100dp"
             android:text="."
             android:fontFamily="@font/g_light"
-            android:layout_columnSpan="2"
+            android:layout_columnSpan="1"
             android:textSize="25sp"
             android:layout_row="4"
             android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:background="@color/black"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btnBracket"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:text="()"
+            android:fontFamily="@font/g_light"
+            android:textSize="25sp"
+            android:layout_row="4"
+            android:layout_column="2"
             android:layout_columnWeight="1"
             android:background="@color/black"
             android:textColor="@color/white"/>
