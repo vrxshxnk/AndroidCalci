@@ -21,7 +21,7 @@ public class ScientificActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
 
         b0 = findViewById(R.id.btn0);
@@ -95,7 +95,7 @@ public class ScientificActivity extends AppCompatActivity {
                 tvInput.setText(process + ".");
             }
         });
-        
+
         bEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
