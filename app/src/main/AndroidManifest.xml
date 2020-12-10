@@ -18,7 +18,6 @@
         </activity>
 
         <activity android:name=".HomeActivity" />
-
         <activity android:name=".ScientificActivity" />
 
     </application>

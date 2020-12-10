@@ -8,6 +8,7 @@
         android:layout_height="wrap_content"
         android:rowCount="5"
         android:columnCount="6">
+        android:layout_gravity
 
         <Button
             android:id="@+id/btnClear"
@@ -181,10 +182,10 @@
             android:layout_column="0"/>
 
         <Button
-            android:id="@+id/btnPi"
+            android:id="@+id/btnFact"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:text="π"
+            android:text="x!"
             android:textSize="25sp"
             android:layout_row="3"
             android:fontFamily="@font/g_light"
@@ -220,17 +221,17 @@
             android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/btn0"
+            android:id="@+id/btnBracket"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:text="0"
-            android:fontFamily="@font/g_light"
+            android:text="()"
             android:textSize="25sp"
-            android:layout_columnWeight="1"
-            android:textColor="@color/white"
-            android:background="@color/black"
             android:layout_row="4"
-            android:layout_column="0"/>
+            android:fontFamily="@font/g_light"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:background="@color/black"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/btnDot"
@@ -246,14 +247,15 @@
             android:background="@color/black"
             android:textColor="@color/white"/>
 
+
         <Button
-            android:id="@+id/btnBracket"
+            android:id="@+id/btnMain"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:text="()"
+            android:text="..."
+            android:fontFamily="@font/g_light"
             android:textSize="25sp"
             android:layout_row="4"
-            android:fontFamily="@font/g_light"
             android:layout_column="2"
             android:layout_columnWeight="1"
             android:background="@color/black"

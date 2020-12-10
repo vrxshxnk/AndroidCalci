@@ -1,19 +1,24 @@
 package com.vr1sh.calculator;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
 
 public class HomeActivity extends AppCompatActivity {
 
     Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bPercent, bPlus, bMinus,
-            bMultiply, bDivision, bEqual, bClear, bDot, bBracket, bBack;
+            bMultiply, bDivision, bEqual, bClear, bDot, bBracket, bBack, bSin, bCos, bTan, bCot,
+            bSec, bCsc, bLog, bSquare, bRoot, bE, bSci;
+
     TextView tvInput,tvOutput;
     String process;
     boolean checkBracket = false;
@@ -27,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         b1 = findViewById(R.id.btn1);
         b2 = findViewById(R.id.btn2);
         b3 = findViewById(R.id.btn3);
-        b4 = findViewById(R.id.btn4);
+        b4 = findViewById(R.id.btn4);;
         b5 = findViewById(R.id.btn5);
         b6 = findViewById(R.id.btn6);
         b7 = findViewById(R.id.btn7);
@@ -41,17 +46,54 @@ public class HomeActivity extends AppCompatActivity {
         bClear = findViewById(R.id.btnClear);
         bDot = findViewById(R.id.btnDot);
         bPercent = findViewById(R.id.btnPercent);
-        bBracket = findViewById(R.id.btnBracket);
         bBack = findViewById(R.id.btnBack);
+        bSci = findViewById(R.id.btnSci);
 
         tvInput = findViewById(R.id.tvInput);
         tvOutput = findViewById(R.id.tvOutput);
+
+        String value;
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            value = bundle.getString("tv");
+        } else {
+            value = "";
+        }
+
+        tvInput.setText(value);
+
+
+        bSci.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = tvInput.getText().toString();
+                Bundle bundle = new Bundle();
+                bundle.putString("tv", input);
+                Intent i = new Intent(HomeActivity.this, ScientificActivity.class);
+                i.putExtras(bundle);
+                startActivity(i);
+            }
+        });
 
         bClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tvInput.setText("");
                 tvOutput.setText("");
+            }
+        });
+
+        bBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String BackSpace= null;
+                if(tvInput.getText().length()>0) {
+                    StringBuilder stringBuilder = new StringBuilder(tvInput.getText());
+                    stringBuilder.deleteCharAt(tvInput.getText().length() - 1);
+                    BackSpace = stringBuilder.toString();
+                    tvInput.setText(BackSpace);
+                }
             }
         });
 
@@ -191,22 +233,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        bBracket.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (checkBracket){
-                    process = tvInput.getText().toString();
-                    tvInput.setText(process + ")");
-                    checkBracket = false;
-                } else {
-                    process = tvInput.getText().toString();
-                    tvInput.setText(process + "(");
-                    checkBracket = true;
-                }
-
-            }
-        });
 
         bEqual.setOnClickListener(new View.OnClickListener() {
             @Override
