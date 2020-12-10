@@ -52,24 +52,30 @@ public class HomeActivity extends AppCompatActivity {
         tvInput = findViewById(R.id.tvInput);
         tvOutput = findViewById(R.id.tvOutput);
 
-        String value;
+        String tvi;
+        String tvo;
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            value = bundle.getString("tv");
+            tvi = bundle.getString("tvi");
+            tvo = bundle.getString("tvo");
         } else {
-            value = "";
+            tvi = "";
+            tvo = "";
         }
 
-        tvInput.setText(value);
+        tvInput.setText(tvi);
+        tvOutput.setText(tvo);
 
 
         bSci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String input = tvInput.getText().toString();
+                String output = tvOutput.getText().toString();
                 Bundle bundle = new Bundle();
-                bundle.putString("tv", input);
+                bundle.putString("tvi", input);
+                bundle.putString("tvo", output);
                 Intent i = new Intent(HomeActivity.this, ScientificActivity.class);
                 i.putExtras(bundle);
                 startActivity(i);

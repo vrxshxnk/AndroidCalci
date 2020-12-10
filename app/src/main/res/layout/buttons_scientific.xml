@@ -38,10 +38,10 @@
             android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/btnRoot"
+            android:id="@+id/btnBracket"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:text="√"
+            android:text="()"
             android:textSize="25sp"
             android:fontFamily="@font/g_light"
             android:layout_row="0"
@@ -51,10 +51,10 @@
             android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/btnSquare"
+            android:id="@+id/btnDivision"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:text="^2"
+            android:text="÷"
             android:textSize="25sp"
             android:fontFamily="@font/g_light"
             android:layout_row="0"
@@ -195,10 +195,10 @@
             android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/btnE"
+            android:id="@+id/btnSquare"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:text="e"
+            android:text="^2"
             android:textSize="25sp"
             android:fontFamily="@font/g_light"
             android:layout_row="3"
@@ -221,10 +221,10 @@
             android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/btnBracket"
+            android:id="@+id/btnRoot"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:text="()"
+            android:text="√"
             android:textSize="25sp"
             android:layout_row="4"
             android:fontFamily="@font/g_light"
