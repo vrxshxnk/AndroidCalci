@@ -46,6 +46,7 @@ public class ScientificActivity extends AppCompatActivity {
         bMultiply = findViewById(R.id.btnMultiply);
         bEqual = findViewById(R.id.btnEqual);
         bDot = findViewById(R.id.btnDot);
+        bFact = findViewById(R.id.btnFact);
 
         tvInput = findViewById(R.id.tvInput);
         tvOutput = findViewById(R.id.tvOutput);
@@ -172,7 +173,7 @@ public class ScientificActivity extends AppCompatActivity {
                 Double input= Double.parseDouble(tvInput.getText().toString());
                 Double input1 = Math.tan(input);
                 process = input1.toString();
-                tvInput.setText("tan:" + process);
+                tvInput.setText("tan: " + process);
             }
         });
 
@@ -182,11 +183,74 @@ public class ScientificActivity extends AppCompatActivity {
                 Double input = Double.parseDouble(tvInput.getText().toString());
                 Double input1 = Math.sqrt(input);
                 process = input1.toString();
-                tvInput.setText("root:" + process);
+                tvInput.setText("root: " + process);
             }
         });
 
-        
+        bSquare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Double input = Double.parseDouble(tvInput.getText().toString());
+                Double input1 = Math.pow(input, 2);
+                process = input1.toString();
+                tvInput.setText("square: " + process);
+            }
+        });
+
+        bFact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer res = 1;
+                Double input = Double.parseDouble(tvInput.getText().toString());
+                for(int i = 2; i <= input; i++) {
+                    res *= i;
+                }
+                process = res.toString();
+                tvInput.setText("Factorial: " + process);
+            }
+        });
+
+        bCot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Double input = Double.parseDouble(tvInput.getText().toString());
+                Double input1 = ((Math.cos(input))/(Math.sin(input)));
+                process = input1.toString();
+                tvInput.setText("cot: " + process);
+            }
+        });
+
+
+        bSec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Double input= Double.parseDouble(tvInput.getText().toString());
+                Double input1 = (1/(Math.cos(input)));
+                process = input1.toString();
+                tvInput.setText("Sec: " + process);
+            }
+        });
+
+        bCsc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Double input = Double.parseDouble(tvInput.getText().toString());
+                Double input1 = (1/(Math.sin(input)));
+                process = input1.toString();
+                tvInput.setText("csc: " + process);
+            }
+        });
+
+        bLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Double input = Double.parseDouble(tvInput.getText().toString());
+                Double input1 = Math.log(input);
+                process = input1.toString();
+                tvInput.setText("ln: " + process);
+            }
+        });
+
 
         bEqual.setOnClickListener(new View.OnClickListener() {
             @Override
